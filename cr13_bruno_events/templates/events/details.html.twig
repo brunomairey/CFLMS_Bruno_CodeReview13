@@ -34,8 +34,9 @@
 
 								
 							</div>
-                            <div class="card-footer mt-2 small" style="background-color: #0154A0"><h4 class="text-center"><b>  &#x1F4C5; {{event.datetime|date('D d/m/y')}} &#8986; {{event.datetime|date('H:i')}}
+                            <div class="card-footer mt-2" style="background-color: #0154A0"><h4 class="text-center"><b>  &#x1F4C5; {{event.datetime|date('D d/m/y')}} &#8986; {{event.datetime|date('H:i')}}
 							               </b></h4>
+                             <a href="{{ path('home') }}" class="btn btn-info btn-lg">Back to Main Menu</a>
                             </div>
                      
                      
@@ -46,6 +47,6 @@
 				</div>
     </div>
 
-
+</div>
        
 {% endblock %}

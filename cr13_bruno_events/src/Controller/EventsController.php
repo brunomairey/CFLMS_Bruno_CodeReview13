@@ -177,10 +177,15 @@ class EventsController extends AbstractController
      /**
      * @Route("/delete/{id}", name="delete")
      */
-    public function delete($id)
+    public function delete($id, Request $request)
     {
     		$em = $this->getDoctrine()->getManager();
            $events = $em->getRepository('App:Events')->find($id);
+            $form = $this->createFormBuilder($events)
+            ->add('save', SubmitType::class, array('label'=> 'Delete Event', 'attr' => array('class'=> 'btn-danger btn-lg', 'style'=>'margin-bottom:15px')))
+       ->getForm();
+       $form->handleRequest($request);
+       if($form->isSubmitted() && $form->isValid()){
            $em->remove($events);
             $em->flush();
            $this->addFlash(
@@ -188,8 +193,8 @@ class EventsController extends AbstractController
                    'Events Removed'
                    );
             return $this->redirectToRoute('home');
-
-
+        }
+        return $this->render('events/delete.html.twig', array('form' => $form->createView()));
     }
 
      /**
