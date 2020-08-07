@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <title>{% block title %}Welcome to Vienna Events!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    <style>
+
+  .hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../header.jpg");
+  background-position: center;
+    background-repeat: no-repeat;
+  height: 18vw;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+   </style>
+
+
+
+    </head>
+    <body>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:4vw">The Events in Vienna</h1>
+  
+  </div>
+</div>
+
+
+    	 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+  
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item active">
+        <a class="nav-link" id="linkformatting" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" id="linkformatting" href="/create">Add an event</a>
+      </li>
+      
+    </ul>
+  </nav>
+
+
+
+        {% block body %}{% endblock %}
+
+
+          <footer>
+        <div class="p-4" style="background-color: #2262A9; width: 100%; display: flex; align-items: center; justify-content: center">
+            <span style="color: white; font-size: 1.5vw">
+              Your events Agency - Bruno Mairey </span><br><br>
+        </div>
+    
+</footer>
+
+
+
+        {% block javascripts %}{% endblock %}
+          <script type="text/javascript">
+   
+   document.getElementById("form_datetime_date_year").className += " mr-2";
+ document.getElementById("form_datetime_date_month").className += " mx-2";
+ document.getElementById("form_datetime_date_day").className += " ml-2 mr-4";
+  document.getElementById("form_datetime_time_hour").className += " mx-2";
+   document.getElementById("form_datetime_time_minute").className += " ml-2";
+
+
+   </script>
+        	  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>

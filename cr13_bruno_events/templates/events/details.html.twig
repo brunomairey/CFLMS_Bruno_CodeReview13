@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{event.name}}{% endblock %}
+
+
+{% block body %}
+       
+	<div class="jumbotron jumbotron-fluid mb-0" style="background-color: #8AADD7">
+     
+      			
+				<div class="card-deck" style="position: relative; left: 10vw; width: 80vw;">
+                    
+                        <div class="card mb-4 text-white text-center teaser hovereffect" style="background-color: #4775B3">
+                       
+                            <img src=../{{event.image}} class="card-img-top imageheight vh-10" alt="thethingstosee" style="border: 0.02px solid silver;" >
+                        	
+                        		
+                            <div class="card-body">
+                                <h5 class="card-title">{{event.name}} </h5>
+                                <p class="card-text text-left m-3">{{event.description}}</p>
+                                 <p class="card-text text-left m-3">{{event.capacity}} seats</p>
+								 <p class="card-text text-left">
+       
+                           	<h5 class="card-text text-left m-3"> Information about the event and contact </h5>
+                           	<h6 class="card-text text-left m-3"><b>&#128205; Address: </b> {{event.address}}</h6>
+                           	<h6 class="card-text text-left m-3"><b>&#128231; Mail: </b> {{event.contactmail}}</h6>
+                           	<h6 class="card-text text-left m-3"><b>&#x260E; Phone: </b>{{event.contactphone}}</h6>
+                           	<h6 class="card-text text-left m-3"><a href="{{event.url}}" class="btn btn-dark mr-5">&#9000; Website</a>     
+                       <a href="/type/{{event.type}}" class="btn btn-info">{{event.type}}</a></h6>
+                      
+
+								</p>
+
+								
+							</div>
+                            <div class="card-footer mt-2 small" style="background-color: #0154A0"><h4 class="text-center"><b>  &#x1F4C5; {{event.datetime|date('D d/m/y')}} &#8986; {{event.datetime|date('H:i')}}
+							               </b></h4>
+                            </div>
+                     
+                     
+                     
+                   		
+               			
+   				
+				</div>
+    </div>
+
+
+       
+{% endblock %}
